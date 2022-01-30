@@ -40,6 +40,7 @@ return packer.startup {
     require("cooper.neorg")
     require("cooper.markdownpreview")
     require("cooper.diffview")
+    require("cooper.wilder")
 
     use "psliwka/vim-smoothie"
     use "machakann/vim-sandwich"
