@@ -32,6 +32,7 @@ return packer.startup {
     require("cooper.tree")
     require("cooper.vsnip")
     require("cooper.formatter")
+    require("cooper.lint")
 
     use "psliwka/vim-smoothie"
     use "machakann/vim-sandwich"
