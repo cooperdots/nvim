@@ -21,6 +21,7 @@ return packer.startup {
     require("cooper.lsp")
     require("cooper.cmp")
     require("cooper.treesitter")
+    require("cooper.telescope")
 
     use "psliwka/vim-smoothie"
     use "machakann/vim-sandwich"
