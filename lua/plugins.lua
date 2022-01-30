@@ -46,6 +46,8 @@ return packer.startup {
     require("cooper.ultest")
     require("cooper.cheatsheet")
 
+    require("cooper.colors.kanagawa")
+
     use "psliwka/vim-smoothie"
     use "machakann/vim-sandwich"
     use "evanleck/vim-svelte"
