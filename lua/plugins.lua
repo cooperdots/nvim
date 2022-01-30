@@ -27,6 +27,7 @@ return packer.startup {
     require("cooper.lualine")
     require("cooper.lsp.saga")
     require("cooper.kommentary")
+    require("cooper.terminal")
 
     use "psliwka/vim-smoothie"
     use "machakann/vim-sandwich"
