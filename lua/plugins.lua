@@ -44,6 +44,7 @@ return packer.startup {
     require("cooper.notify")
     require("cooper.zenmode")
     require("cooper.ultest")
+    require("cooper.cheatsheet")
 
     use "psliwka/vim-smoothie"
     use "machakann/vim-sandwich"
