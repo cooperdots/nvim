@@ -36,6 +36,7 @@ return packer.startup {
     require("cooper.indent")
     require("cooper.autopairs")
     require("cooper.neorg")
+    require("cooper.markdownpreview")
 
     use "psliwka/vim-smoothie"
     use "machakann/vim-sandwich"
