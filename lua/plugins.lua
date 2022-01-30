@@ -41,6 +41,7 @@ return packer.startup {
     require("cooper.markdownpreview")
     require("cooper.diffview")
     require("cooper.wilder")
+    require("cooper.notify")
 
     use "psliwka/vim-smoothie"
     use "machakann/vim-sandwich"
