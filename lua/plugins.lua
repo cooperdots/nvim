@@ -30,6 +30,7 @@ return packer.startup {
     require("cooper.terminal")
     require("cooper.toggleterm")
     require("cooper.tree")
+    require("cooper.vsnip")
 
     use "psliwka/vim-smoothie"
     use "machakann/vim-sandwich"
