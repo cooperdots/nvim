@@ -22,6 +22,7 @@ return packer.startup {
     require("cooper.cmp")
     require("cooper.treesitter")
     require("cooper.telescope")
+    require("cooper.gitsigns")
 
     use "psliwka/vim-smoothie"
     use "machakann/vim-sandwich"
