@@ -12,38 +12,45 @@ require("nest").applyKeymaps({
   }}
 })
 
--- vim.cmd("autocmd BufWritePost */nvim/lua/* PackerCompile")
+vim.cmd("autocmd BufWritePost */nvim/lua/* PackerCompile")
 
 return packer.startup {
   function()
     use {"wbthomason/packer.nvim", opt = true}
     use "LionC/nest.nvim"
+
     require("cooper.lsp")
-    require("cooper.cmp")
-    require("cooper.treesitter")
-    require("cooper.telescope")
-    require("cooper.gitsigns")
-    require("cooper.bufferline")
-    require("cooper.lualine")
     require("cooper.lsp.saga")
     require("cooper.lsp.signature")
     require("cooper.lsp.codeaction")
+    require("cooper.treesitter")
+
+    require("cooper.cmp")
+    require("cooper.vsnip")
+    require("cooper.lint")
+    require("cooper.formatter")
+    require("cooper.autopairs")
     require("cooper.kommentary")
+    require("cooper.indent")
+
+    require("cooper.gitsigns")
+    require("cooper.diffview")
+
+    require("cooper.telescope")
+    require("cooper.bufferline")
+    require("cooper.lualine")
+    require("cooper.tree")
+
     require("cooper.terminal")
     require("cooper.toggleterm")
-    require("cooper.tree")
-    require("cooper.vsnip")
-    require("cooper.formatter")
-    require("cooper.lint")
-    require("cooper.indent")
-    require("cooper.autopairs")
+    require("cooper.ultest")
+
     require("cooper.neorg")
     require("cooper.markdownpreview")
-    require("cooper.diffview")
+
     require("cooper.wilder")
     require("cooper.notify")
     require("cooper.zenmode")
-    require("cooper.ultest")
     require("cooper.cheatsheet")
 
     require("cooper.colors.kanagawa")
