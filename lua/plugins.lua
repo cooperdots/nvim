@@ -19,6 +19,7 @@ return packer.startup {
     use {"wbthomason/packer.nvim", opt = true}
     use "LionC/nest.nvim"
     require("cooper.lsp")
+    require("cooper.cmp")
   end;
   -- Packer config {{{
   -- Setup profile and modify symbols
