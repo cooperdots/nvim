@@ -33,6 +33,7 @@ return packer.startup {
     require("cooper.vsnip")
     require("cooper.formatter")
     require("cooper.lint")
+    require("cooper.indent")
 
     use "psliwka/vim-smoothie"
     use "machakann/vim-sandwich"
