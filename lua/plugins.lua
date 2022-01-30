@@ -27,6 +27,7 @@ return packer.startup {
     require("cooper.lualine")
     require("cooper.lsp.saga")
     require("cooper.lsp.signature")
+    require("cooper.lsp.codeaction")
     require("cooper.kommentary")
     require("cooper.terminal")
     require("cooper.toggleterm")
