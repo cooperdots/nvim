@@ -26,6 +26,7 @@ return packer.startup {
     require("cooper.bufferline")
     require("cooper.lualine")
     require("cooper.lsp.saga")
+    require("cooper.lsp.signature")
     require("cooper.kommentary")
     require("cooper.terminal")
     require("cooper.toggleterm")
