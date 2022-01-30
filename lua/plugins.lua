@@ -20,6 +20,12 @@ return packer.startup {
     use "LionC/nest.nvim"
     require("cooper.lsp")
     require("cooper.cmp")
+
+    use "psliwka/vim-smoothie"
+    use "machakann/vim-sandwich"
+    use "evanleck/vim-svelte"
+    use "github/copilot.vim"
+    use "jbyuki/nabla.nvim"
   end;
   -- Packer config {{{
   -- Setup profile and modify symbols
