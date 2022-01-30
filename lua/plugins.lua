@@ -20,6 +20,7 @@ return packer.startup {
     use "LionC/nest.nvim"
     require("cooper.lsp")
     require("cooper.cmp")
+    require("cooper.treesitter")
 
     use "psliwka/vim-smoothie"
     use "machakann/vim-sandwich"
