@@ -1,5 +1,5 @@
-require("lspkind").init({
-  with_text = true;
+return {
+  mode = "symbol_text";
   preset = "default";
   symbol_map = {
     Text = "";
@@ -28,4 +28,4 @@ require("lspkind").init({
     Operator = "";
     TypeParameter = ""
   };
-})
+}

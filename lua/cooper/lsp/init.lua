@@ -5,14 +5,14 @@ require("packer").use {
   -- vim:set fdm=marker fdl=0: }}}
   config = function()
     local lspconfig = require("lspconfig")
-    require("ampersand.config.lsp.diagnostics")
+    require("cooper.lsp.diagnostics")
 
     local servers = {
       pyright = {};
       tsserver = {};
-      cssls = { cmd = { "css-languageserver", "--stdio" } };
+      -- cssls = { cmd = { "css-languageserver", "--stdio" } };
       jsonls = { cmd = { "vscode-json-languageserver", "--stdio" } };
-      html = { cmd = { "html-languageserver", "--stdio" } };
+      -- html = { cmd = { "html-languageserver", "--stdio" } };
       svelte = {};
       rust_analyzer = {
         settings = {

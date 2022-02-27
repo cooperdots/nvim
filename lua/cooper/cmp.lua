@@ -22,7 +22,7 @@ require("packer").use {
       };
       formatting = {
         -- fields = {"kind", "abbr", "menu"};
-        format = lspkind.cmp_format({with_text = true})
+        format = lspkind.cmp_format(require("cooper.lsp.kind"))
       };
       snippet = {
         expand = function(args)
