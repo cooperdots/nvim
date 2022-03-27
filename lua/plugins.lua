@@ -7,17 +7,24 @@ vim.cmd("autocmd BufWritePost */nvim/lua/* PackerCompile")
 return packer.startup {
   function()
     use {"wbthomason/packer.nvim", opt = false}
+    -- Nest config {{{
     use {"LionC/nest.nvim", config = function ()
-      require("nest").applyKeymaps({
+      require("nest").applyKeymaps {
         { "<Space>P", {
           { "I", packer.install };
           { "C", packer.compile };
           { "U", packer.update };
           { "X", packer.clean };
           { "S", packer.sync };
-        }}
-      })
-    end}
+        }};
+        { mode = "i", {
+          {"<C-h>", "<Left>"};
+          {"<C-j>", "<Down>"};
+          {"<C-k>", "<Up>"};
+          {"<C-l>", "<Right>"};
+        }};
+      }
+    end} --}}}
 
     require("cooper.lsp")
     require("cooper.lsp.saga")
