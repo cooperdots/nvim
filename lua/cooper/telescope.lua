@@ -52,7 +52,10 @@ require("packer").use {
     local settings = {prompt_title="", results_title="", preview_title=""}
     require("nest").applyKeymaps {
       {"<Space>", {
-        {"f", function() builtin.git_files(settings) end}
+        {"f", function()
+          local ok = pcall(builtin.git_files, settings)
+          if not ok then builtin.find_files(settings) end
+        end}
       }};
       {"<Leader>", {
         {"<Space>", {
