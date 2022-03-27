@@ -31,5 +31,19 @@ require("packer").use {
   "rebelot/kanagawa.nvim";
   before = "lualine.nvim";
   -- vim:set fdm=marker fdl=0: }}}
-  config = Kanagawa
+  config = function()
+    vim.opt.fillchars:append {
+      horiz = ' ',
+      horizup = ' ',
+      horizdown = ' ',
+
+      vert = ' ',
+      vertleft = ' ',
+
+      vertright = ' ',
+      verthoriz = ' ',
+    }
+
+    Kanagawa()
+  end
 }
