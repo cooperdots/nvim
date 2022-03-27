@@ -9,6 +9,7 @@ return packer.startup {
     use {"wbthomason/packer.nvim", opt = false}
     -- Nest config {{{
     use {"LionC/nest.nvim", config = function ()
+      local packer = require("packer")
       require("nest").applyKeymaps {
         { "<Space>P", {
           { "I", packer.install };
