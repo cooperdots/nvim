@@ -10,7 +10,7 @@ require("packer").use {
         ["core.defaults"] = {};
         ["core.norg.concealer"] = {
           config = {
-            icon_preset = "diamond";
+            icon_preset = "basic";
           }
         };
         ["core.norg.completion"] = {
