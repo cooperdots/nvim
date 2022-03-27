@@ -54,6 +54,9 @@ return packer.startup {
     require("cooper.cheatsheet")
 
     require("cooper.neoscroll")
+    require("cooper.scrollbar")
+    require("cooper.hlslens")
+
     require("cooper.colors.kanagawa")
 
     use "machakann/vim-sandwich"
