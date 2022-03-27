@@ -2,22 +2,22 @@ vim.cmd [[packadd packer.nvim]]
 local packer = require("packer")
 local use = packer.use
 
---[[require("nest").applyKeymaps({
-  { "<Space>P", {
-    { "I", packer.install };
-    { "C", packer.compile };
-    { "U", packer.update };
-    { "X", packer.clean };
-    { "S", packer.sync };
-  }}
-})--]]
-
 vim.cmd("autocmd BufWritePost */nvim/lua/* PackerCompile")
 
 return packer.startup {
   function()
     use {"wbthomason/packer.nvim", opt = false}
-    use "LionC/nest.nvim"
+    use {"LionC/nest.nvim", config = function ()
+      require("nest").applyKeymaps({
+        { "<Space>P", {
+          { "I", packer.install };
+          { "C", packer.compile };
+          { "U", packer.update };
+          { "X", packer.clean };
+          { "S", packer.sync };
+        }}
+      })
+    end}
 
     require("cooper.lsp")
     require("cooper.lsp.saga")
