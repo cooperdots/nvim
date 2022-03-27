@@ -13,5 +13,14 @@ require("packer").use {
     vim.g.ultest_not_run_sign = ""
     vim.g.ultest_running_sign = "•"
     vim.g.ultest_output_on_line = false
+
+    require("nest").applyKeymaps {
+      { "<Space>R", "<Plug>(ultest-run-file)" };
+      { "<Space>r", "<Plug>(ultest-run-nearest)" };
+      { "<Space>s", "<Plug>(ultest-summary-jump)" };
+      { "<Space>o", "<Plug>(ultest-output-show)" };
+      { "[f", "<Plug>(ultest-prev-fail)" };
+      { "]f", "<Plug>(ultest-next-fail)" };
+    }
   end;
 }
