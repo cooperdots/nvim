@@ -25,22 +25,18 @@ require("packer").use {
     local terms = {
       vert = Terminal:new { direction = "vertical" };
       horz = Terminal:new { direction = "horizontal" };
-      lazygit = Terminal:new {
-        cmd = "lazygit";
-        hidden = true;
-        direction = "float"
-      };
     }
 
     require("nest").applyKeymaps {
       {mode="t", {
         { "<M-Space>", [[<C-\><C-n>]] };
         { "<C-w>", [[<C-\><C-n><C-w>]] };
-        { "<M-w>", [[<C-w>]] }
+        { "<M-w>", [[<C-w>]] };
+        { "<Space><Space>", function() terms.horz:toggle() end };
+        { "<Leader><Leader>", function() terms.vert:toggle() end };
       }};
-      { "<Esc>", function() terms.lazygit:toggle() end };
-      { "<M-Esc>", function() terms.vert:toggle() end };
-      { "<M-Tab>", function() terms.horz:toggle() end };
+      { "<Space><Space>", function() terms.horz:toggle() end };
+      { "<Leader><Leader>", function() terms.vert:toggle() end };
     }
   end
 }
