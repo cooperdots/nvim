@@ -53,9 +53,9 @@ return packer.startup {
     require("cooper.zenmode")
     require("cooper.cheatsheet")
 
+    require("cooper.neoscroll")
     require("cooper.colors.kanagawa")
 
-    use "psliwka/vim-smoothie"
     use "machakann/vim-sandwich"
     use "evanleck/vim-svelte"
     use "github/copilot.vim"
