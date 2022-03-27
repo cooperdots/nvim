@@ -27,7 +27,7 @@ opt.swapfile = false
 -- }}}
 
 -- Window/buffer options {{{
-opt.laststatus = 2
+opt.laststatus = 3
 opt.showtabline = 2
 opt.hidden = true
 opt.splitbelow = true
