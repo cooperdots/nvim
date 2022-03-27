@@ -1,10 +1,3 @@
-local fn = vim.fn
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
--- local packer_bootstrap = nil
-if fn.empty(fn.glob(install_path)) > 0 then
-	packer_bootstrap = fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
-end
-
 vim.cmd [[packadd packer.nvim]]
 local packer = require("packer")
 local use = packer.use
@@ -23,7 +16,7 @@ vim.cmd("autocmd BufWritePost */nvim/lua/* PackerCompile")
 
 return packer.startup {
   function()
-    use {"wbthomason/packer.nvim", opt = true}
+    use {"wbthomason/packer.nvim", opt = false}
     use "LionC/nest.nvim"
 
     require("cooper.lsp")
@@ -68,9 +61,6 @@ return packer.startup {
     use "github/copilot.vim"
     use "jbyuki/nabla.nvim"
 
-    if packer_bootsrap then
-	    packer.sync()
-    end
   end;
   -- Packer config {{{
   -- Setup profile and modify symbols
@@ -82,9 +72,6 @@ return packer.startup {
     display = {
       error_sym = "";
       done_sym = "";
-      -- open_fn = function()
-      --   return require("packer.util").float({ border = "single" })
-      -- end;
     };
   }
   -- vim:set fdm=marker fdl=0: }}}
