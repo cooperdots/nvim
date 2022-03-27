@@ -5,6 +5,7 @@ require("packer").use {
   config = function()
     local diffview = require("diffview")
 
+    vim.opt.fillchars:append({diff = " "})
     diffview.setup {
       file_panel = {
         width = 30;
