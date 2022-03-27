@@ -63,6 +63,9 @@ return packer.startup {
     use "evanleck/vim-svelte"
     use "github/copilot.vim"
     use "jbyuki/nabla.nvim"
+    use {"unblevable/quick-scope", config = function()
+      vim.g.qs_highlight_on_keys = {"f", "F", "t", "T"}
+    end}
 
   end;
   -- Packer config {{{
