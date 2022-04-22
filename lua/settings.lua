@@ -3,8 +3,6 @@ local opt = vim.opt
 -- Appearance options {{{
 opt.number = true
 opt.relativenumber = true
-opt.foldmethod = "manual"
-opt.foldlevelstart = 1
 opt.lazyredraw = true
 vim.opt.guifont = [[Hack\ Nerd\ Font:h12]]
 local a = "n-sm:block-Cursor,"
@@ -13,6 +11,14 @@ local c = "r-cr:hor20-CursorRM,"
 local d = "v-ve:block-CursorVM,"
 local e = "c-o:block-CursorCM,"
 opt.guicursor = a .. b .. c .. d .. e
+-- }}}
+
+-- Fold options {{{
+opt.foldmethod = "manual"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldtext = [[substitute(getline(v:foldstart),'\t',repeat(' ',&tabstop),'g').' ... '.trim(getline(v:foldend))]]
+opt.foldnestmax = 3
+opt.foldminlines = 1
 -- }}}
 
 -- Information options {{{
