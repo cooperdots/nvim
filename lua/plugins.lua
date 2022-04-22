@@ -74,6 +74,10 @@ return packer.startup {
       vim.g.qs_highlight_on_keys = {"f", "F", "t", "T"}
     end}
 
+    use {"m-demare/hlargs.nvim", config = function()
+      require("hlargs").setup()
+      vim.cmd [[autocmd ColorScheme * hi! link Hlargs TSParameterReference]]
+    end}
   end;
   -- Packer config {{{
   -- Setup profile and modify symbols
