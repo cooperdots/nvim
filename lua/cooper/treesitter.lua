@@ -61,7 +61,7 @@ require("packer").use {
         "norg_table";
       };
       highlight = { enable = true, use_languagetree = true };
-      indent = { enable = false };
+      indent = { enable = true };
       context_commentstring = { enable = true };
       query_linter = {
         enable = true;
@@ -70,6 +70,18 @@ require("packer").use {
       };
       autopairs = { enable = true };
       playground = { enable = true };
+      textobjects = {
+        select = {
+          enable = true;
+          lookahead = true;
+          keymaps = {
+            ["af"] = "@function.outer";
+            ["if"] = "@function.inner";
+            ["ac"] = "@class.outer";
+            ["ic"] = "@class.inner";
+          };
+        };
+      };
     }
   end
 }
