@@ -4,11 +4,14 @@ require("packer").use {
   requires = {
     "onsails/lspkind-nvim";
     "hrsh7th/vim-vsnip";
+    "hrsh7th/cmp-vsnip";
     "hrsh7th/cmp-nvim-lsp";
+    "hrsh7th/cmp-nvim-lsp-signature-help";
     "hrsh7th/cmp-path";
     "kdheepak/cmp-latex-symbols";
     "hrsh7th/cmp-emoji";
     "lukas-reineke/cmp-under-comparator";
+    "hrsh7th/cmp-cmdline";
   };
   -- vim:set fdm=marker fdl=0: }}}
   config = function()
@@ -29,7 +32,7 @@ require("packer").use {
           vim.fn["vsnip#anonymous"](args.body)
         end;
       };
-      mapping = {
+      mapping = cmp.mapping.preset.insert {
         ["<C-d>"] = cmp.mapping.scroll_docs(-4);
         ["<C-f>"] = cmp.mapping.scroll_docs(4);
         ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select });
@@ -42,7 +45,10 @@ require("packer").use {
         })
       };
       sources = {
+        { name = "copilot" };
+        { name = "vsnip" };
         { name = "nvim_lsp" };
+        { name = "nvim_lsp_signature_help" };
         { name = "path" };
         { name = "neorg" };
         { name = "latex_symbols" };
@@ -62,5 +68,13 @@ require("packer").use {
       };
     }
     cmp.setup(config)
+    cmp.setup.cmdline(":", {
+      sources = {
+        { name = "cmdline" }
+      };
+      mapping = cmp.mapping.preset.cmdline {
+        ["<CR>"] = cmp.mapping.confirm({ select = true; });
+      }
+    })
   end
 }

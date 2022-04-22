@@ -29,7 +29,6 @@ return packer.startup {
 
     require("cooper.lsp")
     require("cooper.lsp.saga")
-    require("cooper.lsp.signature")
     require("cooper.lsp.codeaction")
     require("cooper.treesitter")
 
@@ -40,6 +39,7 @@ return packer.startup {
     require("cooper.autopairs")
     require("cooper.kommentary")
     require("cooper.indent")
+    require("cooper.copilot")
 
     require("cooper.gitsigns")
     require("cooper.diffview")
@@ -56,7 +56,6 @@ return packer.startup {
     require("cooper.neorg")
     require("cooper.markdownpreview")
 
-    require("cooper.wilder")
     require("cooper.notify")
     require("cooper.zenmode")
     require("cooper.cheatsheet")
@@ -69,7 +68,6 @@ return packer.startup {
 
     use "machakann/vim-sandwich"
     use "evanleck/vim-svelte"
-    use "github/copilot.vim"
     use "jbyuki/nabla.nvim"
     use {"unblevable/quick-scope", config = function()
       vim.g.qs_highlight_on_keys = {"f", "F", "t", "T"}
