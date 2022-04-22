@@ -3,11 +3,11 @@ require("packer").use {
   "nvim-telescope/telescope.nvim";
   -- opt = true;
   -- cmd = { "Telescope" };
-  -- keys = { "<Leader><Space>", "<Space>f" };
+  -- keys = { "<Leader><Space>f", "<Leader><Space>l", "<Space>f", "<Space>F" };
   requires = {
     "nvim-lua/popup.nvim";
     "nvim-lua/plenary.nvim";
-    "nvim-telescope/telescope-fzy-native.nvim";
+    {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' };
   };
   -- vim:set fdm=marker fdl=0: }}}
   config = function()
@@ -40,14 +40,15 @@ require("packer").use {
         }
       };
       extensions = {
-        fzy_native = {
-          override_generic_sorter = false;
+        fzf = {
+          fuzzy = true;
+          override_generic_sorter = true;
           override_file_sorter = true;
         }
       }
     }
 
-    telescope.load_extension("fzy_native")
+    telescope.load_extension("fzf")
 
     local settings = {prompt_title="", results_title="", preview_title=""}
     require("nest").applyKeymaps {
@@ -55,7 +56,8 @@ require("packer").use {
         {"f", function()
           local ok = pcall(builtin.git_files, settings)
           if not ok then builtin.find_files(settings) end
-        end}
+        end},
+        {"F", function() builtin.git_status(settings) end}
       }};
       {"<Leader>", {
         {"<Space>", {
