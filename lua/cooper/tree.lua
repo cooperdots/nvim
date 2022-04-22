@@ -14,9 +14,12 @@ require("packer").use {
       }
     }
     vim.g.nvim_tree_width = 26
-    vim.g.nvim_tree_indent_markers = 1
+    -- vim.g.nvim_tree_indent_markers = 1
     vim.g.nvim_tree_git_hl = 1
     vim.g.nvim_tree_group_empty = 1
+    vim.g.nvim_tree_add_trailing = 1
+    vim.g.nvim_tree_create_in_closed_folder = 1
+    vim.g.nvim_tree_root_folder_modifier = [[:~:s?\~/ghq/github\.com/\(.*\)/\(.*\)? \1/\2                     ?]]
     vim.g.nvim_tree_show_icons = {
       git = 0;
       folders = 1;
@@ -48,6 +51,10 @@ require("packer").use {
       -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
       update_cwd          = false;
       -- show lsp diagnostics in the signcolumn
+      diagnostics = {
+        enable = true;
+        show_on_dirs = true;
+      };
       -- update the focused file on `BufEnter`, un-collapses the folders recursively until it finds the file
       update_focused_file = {
         -- enables the feature
@@ -75,7 +82,7 @@ require("packer").use {
         -- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'
         side = 'left';
         -- if true the tree will resize itself after opening a file
-        auto_resize = false;
+        auto_resize = true;
         mappings = {
           -- custom only false will merge the list with the default mappings
           -- if true, it will only use your list to set the mappings
@@ -89,8 +96,16 @@ require("packer").use {
         custom = {
           ".git"
         }
+      };
+
+      renderer = {
+        indent_markers = {
+          enable = true
+        }
       }
     }
+
+    require("nvim-tree.view").View.winopts.cursorline = true
 
     require("nest").applyKeymaps {
       { '<Space>t', "<cmd>NvimTreeToggle<CR>" }
