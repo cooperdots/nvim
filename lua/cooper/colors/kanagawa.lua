@@ -10,17 +10,29 @@ function Kanagawa()
       CursorVM = { bg = colors.autumnYellow },
       CursorCM = { bg = colors.oniViolet },
 
+      TSURI = { link="TSFunction" };
       MatchParen = { style="none" };
-      Folded = { link="TSParameter" };
+      TSParameter = { link = "Constant" };
+      Folded = { link="TSProperty" };
       IncSearch = { link="DiffText" };
       Search = { link="Visual" };
       CopilotSuggestion = { fg = colors.fg_comment, bg = colors.bg_visual };
+
+      TelescopeResultsDiffAdd = { link="GitSignsAdd" };
+      TelescopeResultsDiffChange = { link="GitSignsChange" };
+      TelescopeResultsDiffDelete = { link="GitSignsDelete" };
+
+      NvimTreeFolderName = { fg = "None" };
+      NvimTreeOpenedFolderName = { link="NvimTreeFolderName" };
+      NvimTreeRootFolder = { fg=colors.oniViolet, style="none" };
 
       UltestSummaryInfo = { link="TSFunction" };
       UltestSummaryNamespace = { link="TSConstructor" };
 
       QuickScopePrimary = { style="reverse" };
       QuickScopeSecondary = { style="underline" };
+
+      TabiIndent = { bg=colors.springGreen, fg=colors.bg };
     }
   }
   vim.cmd [[colorscheme kanagawa]]
@@ -42,6 +54,10 @@ require("packer").use {
 
       vertright = ' ',
       verthoriz = ' ',
+
+      fold = ' ',
+      foldopen = '┌',
+      foldclose = '╶',
     }
 
     Kanagawa()
