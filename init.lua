@@ -12,5 +12,6 @@ function P(o) print(vim.inspect(o)) return o end
 
 require("plugins")
 require("settings")
+require("tabi")
 
 Kanagawa()
