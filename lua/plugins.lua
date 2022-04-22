@@ -9,14 +9,14 @@ return packer.startup {
     use {"wbthomason/packer.nvim", opt = false}
     -- Nest config {{{
     use {"LionC/nest.nvim", config = function ()
-      local packer = require("packer")
+      local p = require("packer")
       require("nest").applyKeymaps {
         { "<Space>P", {
-          { "I", packer.install };
-          { "C", packer.compile };
-          { "U", packer.update };
-          { "X", packer.clean };
-          { "S", packer.sync };
+          { "I", p.install };
+          { "C", p.compile };
+          { "U", p.update };
+          { "X", p.clean };
+          { "S", p.sync };
         }};
         { mode = "i", {
           {"<C-h>", "<Left>"};
@@ -70,6 +70,7 @@ return packer.startup {
     use "machakann/vim-sandwich"
     use "evanleck/vim-svelte"
     use "jbyuki/nabla.nvim"
+
     use {"unblevable/quick-scope", config = function()
       vim.g.qs_highlight_on_keys = {"f", "F", "t", "T"}
     end}
