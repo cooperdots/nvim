@@ -63,6 +63,7 @@ return packer.startup {
     require("cooper.neoscroll")
     require("cooper.scrollbar")
     require("cooper.hlslens")
+    require("cooper.bufdelete")
 
     require("cooper.colors.kanagawa")
 
