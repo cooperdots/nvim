@@ -20,6 +20,7 @@ require("packer").use {
         "help";
         "packer";
         "UltestSummary"; "UltestOutput";
+        "DiffviewFiles"
       }
     }
   end

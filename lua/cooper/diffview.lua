@@ -4,6 +4,7 @@ require("packer").use {
   -- vim:set fdm=marker fdl=0: }}}
   config = function()
     local diffview = require("diffview")
+    local cb = require("diffview.config").diffview_callback
 
     vim.opt.fillchars:append({diff = " "})
     diffview.setup {
@@ -17,6 +18,12 @@ require("packer").use {
       signs = {
         fold_closed = "▶";
         fold_open = "▼";
+      };
+      key_bindings = {
+        view = {
+          ["<C-j>"] = cb("select_next_entry");
+          ["<C-k>"] = cb("select_prev_entry");
+        };
       };
     }
 
