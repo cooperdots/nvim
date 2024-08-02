@@ -105,14 +105,12 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 -- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 -- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
--- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
---
---  See `:help wincmd` for a list of all window commands
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
-vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
-vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
-vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+-- Keybinds to make moving in insert mode easier.
+--  Use CTRL+<hjkl> to move cursor in insert mode
+vim.keymap.set("i", "<C-h>", "<Left>", { desc = "Move cursor left in insert mode" })
+vim.keymap.set("i", "<C-l>", "<Right>", { desc = "Move cursor right in insert mode" })
+vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move cursor down in insert mode" })
+vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Move cursor up in insert mode" })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
