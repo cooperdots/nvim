@@ -112,6 +112,8 @@ vim.keymap.set("i", "<C-l>", "<Right>", { desc = "Move cursor right in insert mo
 vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move cursor down in insert mode" })
 vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Move cursor up in insert mode" })
 
+vim.keymap.set("n", "<C-w>b", "<Cmd>bd<CR>", { desc = "Close [b]uffer" })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
