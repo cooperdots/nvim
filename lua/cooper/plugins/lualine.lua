@@ -6,8 +6,8 @@ return {
 
 		-- Color table for highlights
 		local colors = {
-			-- bg = "#2A2A37",
-			bg = "#18181f",
+			-- bg = "#18181f",
+			bg = "#2A2A37",
 			fg = "#bbc2cf",
 			blue = "#7daea3",
 			cyan = "#89b482",
@@ -81,18 +81,18 @@ return {
 
 		-- Auto-change color according to neovim's mode
 		local modes = {
-			n = { icon = "", color = colors.green },
-			i = { icon = "", color = colors.blue },
-			v = { icon = "", color = colors.yellow },
+			n = { icon = "", color = colors.green },
+			i = { icon = "", color = colors.blue },
+			v = { icon = "󰈈", color = colors.yellow },
 			[""] = { icon = "", color = colors.yellow },
-			V = { icon = "", color = colors.yellow },
+			V = { icon = "󰘢", color = colors.yellow },
 			c = { icon = "", color = colors.magenta },
 			no = { icon = "", color = colors.red },
 			s = { icon = "", color = colors.orange },
 			S = { icon = "", color = colors.orange },
 			[""] = { icon = "", color = colors.orange },
 			ic = { icon = "", color = colors.yellow },
-			R = { icon = "", color = colors.red },
+			R = { icon = "", color = colors.red },
 			Rv = { icon = "", color = colors.red },
 			cv = { icon = "", color = colors.red },
 			ce = { icon = "", color = colors.red },
