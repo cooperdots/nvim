@@ -78,6 +78,9 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 99
 
+-- Turn of line wrapping
+vim.opt.wrap = false
+
 -- Disable mouse events
 vim.opt.mouse = {}
 
@@ -396,4 +399,4 @@ require("lazy").setup({
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
--- avim: ts=2 sts=2 sw=2 et
+-- vim: ts=4 sts=4 sw=4 et
