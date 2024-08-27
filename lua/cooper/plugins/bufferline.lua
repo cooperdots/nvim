@@ -40,5 +40,6 @@ return {
 		vim.keymap.set("n", "<C-k>", function()
 			bufferline.cycle(1)
 		end)
+		vim.keymap.set("n", "<Tab>", bufferline.pick)
 	end,
 }
