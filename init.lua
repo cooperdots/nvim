@@ -84,6 +84,12 @@ vim.opt.wrap = false
 -- Disable mouse events
 vim.opt.mouse = {}
 
+-- Fold level
+vim.o.foldcolumn = "0"
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -317,6 +323,7 @@ require("lazy").setup({
 				"c",
 				"diff",
 				"html",
+				"latex",
 				"lua",
 				"luadoc",
 				"markdown",
