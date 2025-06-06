@@ -2,7 +2,7 @@ return {
 	"rebelot/kanagawa.nvim",
 	priority = 1000, -- Make sure to load this before all the other start plugins.
 	---@module "kanagawa"
-	---@type KanagawaConfig
+	---@type KanagawaConfig | table<string, any>
 	opts = {
 		keywordStyle = { italic = false },
 		overrides = function(colors)
