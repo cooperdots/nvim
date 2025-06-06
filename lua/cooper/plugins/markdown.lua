@@ -3,13 +3,50 @@ return {
 	---@module "render-markdown"
 	---@type render.md.UserConfig
 	opts = {
-		code = {
-			border = "thick",
-			sign = false,
+		bullet = {
+			icons = { "•", "◦", "‣", "⁃" },
+		},
+		completions = {
+			blink = {
+				enabled = true,
+			},
 		},
 		checkbox = {
-			position = "overlay",
+			bullet = true,
+			unchecked = { icon = " 󰄱 ", highlight = "RenderMarkdownInfo" },
+			checked = { icon = "  ", highlight = "RenderMarkdownSuccess" },
+			custom = {
+				right_arrow = {
+					raw = "[>]",
+					rendered = "  ",
+					highlight = "RenderMarkdownInfo",
+					scope_highlight = nil,
+				},
+				tilde = {
+					raw = "[~]",
+					rendered = " 󰰱 ",
+					highlight = "RenderMarkdownError",
+				},
+				important = {
+					raw = "[!]",
+					rendered = "  ",
+					highlight = "RenderMarkdownWarn",
+				},
+				later = {
+					raw = "[-]",
+					rendered = " 󰥔 ",
+					highlight = "RenderMarkdownInfo",
+				},
+			},
 		},
+		code = {
+			sign = false,
+			border = "thick",
+			position = "right",
+			width = "block",
+			right_pad = 8,
+		},
+		heading = { sign = false },
 	},
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
