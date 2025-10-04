@@ -185,9 +185,10 @@ return { -- LSP Configuration & Plugins
 			rust_analyzer = {
 				settings = {
 					["rust-analyzer"] = {
-						checkOnSave = {
+						check = {
 							command = "clippy",
 						},
+						checkOnSave = true,
 					},
 				},
 			},
