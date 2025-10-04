@@ -69,6 +69,11 @@ vim.o.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
+--
+--  Notice listchars is set using `vim.opt` instead of `vim.o`.
+--  It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
+--   See `:help lua-options`
+--   and `:help lua-options-guide`
 vim.o.list = true
 vim.opt.listchars = { tab = "| ", trail = "·", nbsp = "␣" }
 
@@ -80,6 +85,11 @@ vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 99
+
+-- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
+-- instead raise a dialog asking if you wish to save the current file(s)
+-- See `:help 'confirm'`
+vim.o.confirm = false
 
 -- Turn of line wrapping
 vim.o.wrap = false
@@ -122,6 +132,8 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 
 -- Keybinds to make moving in insert mode easier.
 --  Use CTRL+<hjkl> to move cursor in insert mode
+--
+--  See `:help wincmd` for a list of all window commands
 vim.keymap.set("i", "<C-h>", "<Left>", { desc = "Move cursor left in insert mode" })
 vim.keymap.set("i", "<C-l>", "<Right>", { desc = "Move cursor right in insert mode" })
 vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move cursor down in insert mode" })
@@ -206,9 +218,8 @@ require("lazy").setup({
 	-- which loads which-key before all the UI elements are loaded. Events can be
 	-- normal autocommands events (`:help autocmd-events`).
 	--
-	-- Then, because we use the `config` key, the configuration only runs
-	-- after the plugin has been loaded:
-	--  config = function() ... end
+	-- Then, because we use the `opts` key (recommended), the configuration runs
+	-- after the plugin has been loaded as `require(MODULE).setup(opts)`.
 
 	{ -- Useful plugin to show you pending keybinds.
 		"folke/which-key.nvim",
