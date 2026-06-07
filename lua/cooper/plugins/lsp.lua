@@ -227,22 +227,6 @@ return { -- LSP Configuration & Plugins
 				--
 				-- But for many setups, the LSP (`ts_ls`) will work just fine
 				-- ts_ls = {},
-				--
-
-				lua_ls = {
-					-- cmd = { ... },
-					-- filetypes = { ... },
-					-- capabilities = {},
-					settings = {
-						Lua = {
-							completion = {
-								callSnippet = "Replace",
-							},
-							-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-							-- diagnostics = { disable = { 'missing-fields' } },
-						},
-					},
-				},
 			}
 
 			vim.lsp.config("rust_analyzer", {
@@ -256,6 +240,7 @@ return { -- LSP Configuration & Plugins
 				},
 			})
 
+			vim.lsp.enable("lua_ls")
 			vim.lsp.enable("nushell")
 
 			-- Ensure the servers and tools above are installed
@@ -271,11 +256,6 @@ return { -- LSP Configuration & Plugins
 			--
 			-- You can add other tools here that you want Mason to install
 			-- for you, so that they are available from within Neovim.
-			local ensure_installed = vim.tbl_keys(servers or {})
-			vim.list_extend(ensure_installed, {
-				"stylua", -- Used to format Lua code
-			})
-			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 			require("mason-lspconfig").setup({
 				ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
