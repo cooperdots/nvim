@@ -243,6 +243,19 @@ return { -- LSP Configuration & Plugins
 
 			vim.lsp.enable("lua_ls")
 			vim.lsp.enable("nushell")
+			vim.lsp.enable("nixd")
+			vim.lsp.config("nixd", {
+				settings = {
+					nixpkgs = {
+						expr = "import <nixpkgs> { }",
+					},
+					nixd = {
+						formatting = {
+							command = { "alejandra" },
+						},
+					},
+				},
+			})
 
 			-- Ensure the servers and tools above are installed
 			--
