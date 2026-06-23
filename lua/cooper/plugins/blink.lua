@@ -1,11 +1,13 @@
 return {
 	"saghen/blink.cmp",
 	dependencies = {
+		"saghen/blink.lib",
 		"rafamadriz/friendly-snippets",
 		"folke/lazydev.nvim",
 	},
-	version = "1.*",
-
+	build = function()
+		require("blink.cmp").build():pwait()
+	end,
 	---@module "blink.cmp"
 	---@type blink.cmp.Config
 	opts = {
@@ -55,8 +57,7 @@ return {
 			},
 		},
 		fuzzy = {
-			implementation = "prefer_rust_with_warning",
+			implementation = "rust",
 		},
 	},
-	opts_extend = { "sources.default" },
 }
